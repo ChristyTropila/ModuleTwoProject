@@ -1,0 +1,9 @@
+<h2>Welcome: <%=@child.name%> </h2> 
+
+<p> You Have: <%@child.recipes.map do |recipe|%>
+ You Have: <%=recipe.rewarded_points%> points.
+ <%end%>
+ </p>
+<%= link_to "Play Game", new_recipes_path(@child.id), class: 'button' %>
+
+

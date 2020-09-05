@@ -1,11 +1,13 @@
 class ChildrenController < ApplicationController
 
     def index
-        @childs=Child.all
+        @children=Child.all
     end
 
     def show
-      @child=Child.find(param[:id])
+      @child=Child.find(params[:id])
+    #   @recipe=Recipe.find(params[:id])
+    #   byebug
     end
 
     def new
@@ -15,9 +17,9 @@ class ChildrenController < ApplicationController
     def create
         @child=Child.create(child_params)
         if @child.save
-            redirect_to child_path
+            redirect_to child_path(@child)
         else
-            redirect_to new_child_path
+            redirect_to new_children_path
     end
 end
 
@@ -33,7 +35,7 @@ end
     private
     
     def child_params
-        params.permit(:child).permit(:name, :user_name, :age)
+        params.require(:child).permit(:id, :name, :user_name, :age)
     end
 
 end

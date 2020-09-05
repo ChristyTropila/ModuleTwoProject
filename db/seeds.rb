@@ -25,3 +25,6 @@ kitch3=KitchenTool.create(name: "ChopSticks", description: "These could be used 
 instruction1=Instruction.create(content: "Throw everything into a bowl. Stir. Give your dog a taste to see if they like it.")
 instruction2=Instruction.create(content: "Give up and go outside and play. Leave mess for your parents")
 instruction3=Instruction.create(content: "Ask an adult to put your awesome recipe in the oven")
+
+child1=Child.create(name: "Bobby", user_name: "testing")
+recipe=Recipe.create(title: "Testing", rewarded_points: 5, child_id: child1.id)

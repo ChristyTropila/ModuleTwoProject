@@ -1,0 +1,9 @@
+<h2> Let's Get Started! </h2>
+
+<%=form_for  @recipe do |f|%>
+<%=f.collection_select :child_id, @child, :id, :name%>
+<%=f.text_field :title%>
+<%=f.submit 'Name Your Recipe!'%>
+<%end%>
+
+
