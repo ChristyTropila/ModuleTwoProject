@@ -1,0 +1,3 @@
+class KitchenTool < ApplicationRecord
+ 
+end
