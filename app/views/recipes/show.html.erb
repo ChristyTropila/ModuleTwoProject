@@ -1,8 +1,10 @@
 <h2><%=@current_recipe.title%></h2>
 
 <%@current_recipe.instructions.map do |current|%>
-<li><%=current.content%></li>
-<li><%=@current_recipe.find_name_of_food(current.food_item_id)%></li>
+<li>Ingredients: <%=@current_recipe.find_name_of_food(current.food_item_id)%></li>
 
-
+<li><%=@current_recipe.find_descrip_of_tool(current.kitchen_tool_id)%></li>
+<li>Instructions: <%=current.content%></li>
 <%end%>
+<br>
+<%= link_to "Return To Dashboard", child_path(:child_id => @current_child), :Method => :post %>

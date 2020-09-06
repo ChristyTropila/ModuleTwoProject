@@ -21,6 +21,28 @@ class Recipe < ApplicationRecord
     # byebug
    end
 
+   def find_name_of_tool(tool_id)
+    tool=self.instructions.find do |f|
+      f.kitchen_tool_id == tool_id
+    end
+   
+    get_name=KitchenTool.all.find(tool.kitchen_tool_id)
+    # byebug
+    return get_name.name
+    #  byebug
+  end
+
+  def find_descrip_of_tool(tool_id)
+    tool=self.instructions.find do |f|
+      f.kitchen_tool_id == tool_id
+    end
+   
+    get_descrip=KitchenTool.all.find(tool.kitchen_tool_id)
+    # byebug
+    return get_descrip.description
+    #  byebug
+  end
+
 
      
 end

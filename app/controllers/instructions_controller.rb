@@ -13,6 +13,7 @@ def new
 end
 
 def create
+
  @instruction=Instruction.create(instruction_params)
     if @instruction.save
         redirect_to recipe_path(@instruction)

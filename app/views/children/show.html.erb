@@ -3,10 +3,16 @@
 <h1><p>Logged in as:  <%=@current_child.name%></p></h1>
 <p> You Have: <%@current_child.recipes.map do |recipe|%>
         
-     <%=recipe.rewarded_points%> 
+     <%=recipe.rewarded_points%> points.
 
  <%end%>
  </p>
+ <h2> Recipes </h2>
+ <%@current_child.recipes.map do |recipe|%>
+ <%=link_to recipe.title, recipe_path%>
+<%end%>
 
+<br>
+<br>
 
 <%= link_to "Play Game", new_recipes_path(:child_id => @current_child), :Method => :post %>
