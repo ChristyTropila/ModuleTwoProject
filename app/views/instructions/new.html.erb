@@ -1,0 +1,12 @@
+<h2>What Will You Do Next? </h2>
+
+
+<%=form_for  @instruction do |f|%>
+<%=f.hidden_field :recipe_id, :value => session[:recipe_id]%>
+
+<%=f.label :content%>
+<%=f.collection_select :content, Instruction.all, :id, :content%>
+<%=f.submit 'Create Your Recipe!'%>
+<%end%>
+
+

@@ -36,6 +36,6 @@ class KitchenToolsController < ApplicationController
     private
 
     def kitchen_params
-        params.require(:kitchen).permit(:id, :name, :description)
+        params.require(:kitchen_tool).permit(:name, :description)
     end
 end

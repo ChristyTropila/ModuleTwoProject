@@ -3,7 +3,11 @@ helper_method :current_child
 
 def current_child
     session[:child] ||= []
-    byebug
+
+end
+
+def current_recipe
+    session[:recipe] ||= []
 end
 
 end

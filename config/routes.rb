@@ -25,5 +25,10 @@ Rails.application.routes.draw do
  post 'kitchen_tools', to: 'kitchen_tools#create'
  get 'kitchen_tools/:id', to: 'kitchen_tools#show', as: 'kitchen_tool'
 
+ get 'instructions', to: 'instructions#index', as: 'instructions'
+ get 'instructions/new', to: 'instructions#new', as: 'new_instructions'
+ post 'instructions', to: 'instructions#create'
+ get 'instructions/:id', to: 'instructions#show', as: 'instruction'
+
 
 end

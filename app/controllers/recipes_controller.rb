@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
     end
 
     def show
-        @recipe=Recipe.find(params[:id])
+        @current_recipe=Recipe.find_by(id: session[:recipe_id])
     end
 
     def new
@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
         @recipe=Recipe.create(recipe_params)
     
         if @recipe.save
+            session[:recipe_id]=@recipe.id
             @recipe.update_attributes(rewarded_points: 50)
             redirect_to new_food_items_path
         else
