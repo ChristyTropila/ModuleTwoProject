@@ -4,11 +4,12 @@ class Recipe < ApplicationRecord
   has_many :food_items, through: :instructions
   has_many :kitchen_tools, through: :instructions
 
-  # rewarded_points=0
+ 
   
-  # def add_points
-  #   self.rewarded_points=5
-  # end
+   def update_points(recipe)
+    recipe.rewarded_points += 50
+    byebug
+   end
 
    def find_name_of_food(food_id)
     food=self.instructions.find do |f|

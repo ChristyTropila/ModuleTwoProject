@@ -16,10 +16,13 @@ class RecipesController < ApplicationController
 
     def create
         @recipe=Recipe.create(recipe_params)
+        @recipe.update_points(@recipe)
+        byebug
     
         if @recipe.save
             session[:recipe_id]=@recipe.id
-            @recipe.update_attributes(rewarded_points: 50)
+         
+            
             redirect_to new_food_items_path
         else
             redirect_to new_recipes_path
