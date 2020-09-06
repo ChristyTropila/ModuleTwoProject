@@ -9,7 +9,9 @@ class FoodItemsController < ApplicationController
     end
 
     def new
+        @food_var=FoodItem.all
         @food=FoodItem.new
+    
     end
 
     def create
@@ -30,7 +32,7 @@ class FoodItemsController < ApplicationController
     private
 
     def food_params
-        params.require(:food).permit()
+        params.require(:food).permit(:id, :name, :quantity)
 
     end
 

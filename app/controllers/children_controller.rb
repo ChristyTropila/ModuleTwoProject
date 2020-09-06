@@ -5,7 +5,6 @@ class ChildrenController < ApplicationController
     end
 
     def show
-    #   @child=Child.find(params[:id])
       @current_child=Child.find_by(id: session[:child_id])
     end
 

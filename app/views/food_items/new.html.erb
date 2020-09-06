@@ -1,3 +1,13 @@
 <h2>Lets Pick Some Food!</h2>
 
+
+<%=form_for  @food do |f|%>
+<%=f.label :name%>
+<%=f.collection_select :id, @food_var, :id, :name %>
+
+<%=f.submit 'Name Your Recipe!'%>
+<%end%>
+
+
+
 <hr>

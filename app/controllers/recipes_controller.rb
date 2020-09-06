@@ -1,6 +1,4 @@
 class RecipesController < ApplicationController
-#   before_action :current_user
-# before_action :set_current_user
 
     def index
         @recipes=Recipe.all
@@ -19,6 +17,7 @@ class RecipesController < ApplicationController
         @recipe=Recipe.create(recipe_params)
     
         if @recipe.save
+            @recipe.update_attributes(rewarded_points: 50)
             redirect_to new_food_items_path
         else
             redirect_to new_recipes_path
@@ -40,13 +39,6 @@ class RecipesController < ApplicationController
     def recipe_params
         params.require(:recipe).permit(:id, :title, :child_id)
     end
-
-    # def current_user
-    #     @current_user ||= begin
-    #     Child.find(session[:id]) if session[:id]
-    #    end
-    #   helper_method :current_user
-    #  end
 
 
     end
