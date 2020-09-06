@@ -1,9 +1,10 @@
-<h2>Welcome: <%=@child.name%> </h2> 
 
-<p> You Have: <%@child.recipes.map do |recipe|%>
+
+<h1><p>Logged in as:  <%=@current_child.name%></p></h1>
+<p> You Have: <%@current_child.recipes.map do |recipe|%>
  You Have: <%=recipe.rewarded_points%> points.
  <%end%>
  </p>
-<%= link_to "Play Game", new_recipes_path(@child.id), class: 'button' %>
 
 
+<%= link_to "Play Game", new_recipes_path(:child_id => @current_child), :Method => :post %>

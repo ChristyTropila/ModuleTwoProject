@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-
+#   before_action :current_user
+# before_action :set_current_user
 
     def index
         @recipes=Recipe.all
@@ -10,15 +11,13 @@ class RecipesController < ApplicationController
     end
 
     def new
-
-     @recipe=Recipe.new
-     @child=Child.all
-       
+      @recipe=Recipe.new
+     
     end
 
     def create
         @recipe=Recipe.create(recipe_params)
-        @recipe.child_id=
+    
         if @recipe.save
             redirect_to new_food_items_path
         else
@@ -42,5 +41,12 @@ class RecipesController < ApplicationController
         params.require(:recipe).permit(:id, :title, :child_id)
     end
 
+    # def current_user
+    #     @current_user ||= begin
+    #     Child.find(session[:id]) if session[:id]
+    #    end
+    #   helper_method :current_user
+    #  end
 
-end
+
+    end

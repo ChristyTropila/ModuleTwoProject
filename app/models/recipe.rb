@@ -4,4 +4,5 @@ class Recipe < ApplicationRecord
   has_many :food_items, through: :instructions
   has_many :kitchen_tools, through: :instructions
 
+
 end

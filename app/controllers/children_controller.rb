@@ -5,9 +5,8 @@ class ChildrenController < ApplicationController
     end
 
     def show
-      @child=Child.find(params[:id])
-    #   @recipe=Recipe.find(params[:id])
-    #   byebug
+    #   @child=Child.find(params[:id])
+      @current_child=Child.find_by(id: session[:child_id])
     end
 
     def new
@@ -17,10 +16,13 @@ class ChildrenController < ApplicationController
     def create
         @child=Child.create(child_params)
         if @child.save
+          session[:child_id]=@child.id
             redirect_to child_path(@child)
+            # byebug
         else
             redirect_to new_children_path
     end
+    
 end
 
     def edit
