@@ -1,5 +1,5 @@
 class Instruction < ApplicationRecord
   belongs_to :recipe,  optional: true
-  has_many :food_items
-  has_many :kitchen_tools
+  belongs_to :food_items, optional: true
+  belongs_to :kitchen_tools, optional: true
 end

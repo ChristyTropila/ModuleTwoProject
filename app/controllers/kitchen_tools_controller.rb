@@ -6,7 +6,7 @@ class KitchenToolsController < ApplicationController
     end
 
     def show
-        @tool=KitchenTool.find(params[:id])
+        @current_tool=KitchenTool.find_by(id: session[:kitchen_tool_id])
     end
 
     def new
@@ -18,6 +18,7 @@ class KitchenToolsController < ApplicationController
     def create
         @tool=KitchenTool.create(kitchen_params)
         if @tool.save
+            session[:kitchen_tool_id]=@tool.id
             redirect_to new_instructions_path
         else
             redirect_to new_kitchen_tools_path

@@ -10,7 +10,6 @@ end
 
 def new
     @instruction=Instruction.new
-  
 end
 
 def create
@@ -18,7 +17,7 @@ def create
     if @instruction.save
         redirect_to recipe_path(@instruction)
     else
-        redirect_to new_instruction_path
+        redirect_to new_instructions_path
     end
 end
 
@@ -35,7 +34,7 @@ end
 private
 
 def instruction_params
-    params.require(:instruction).permit(:content, :recipe_id)
+    params.require(:instruction).permit(:content, :recipe_id, :food_item_id, :kitchen_tool_id)
 end
 
 end

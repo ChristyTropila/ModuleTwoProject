@@ -10,4 +10,12 @@ def current_recipe
     session[:recipe] ||= []
 end
 
+def current_food
+    session[:food_item] ||= []
+end
+
+def current_tool
+    session[:kitchen_tool] ||= []
+end
+
 end

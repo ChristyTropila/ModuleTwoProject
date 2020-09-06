@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
     def show
         @current_recipe=Recipe.find_by(id: session[:recipe_id])
+       
     end
 
     def new

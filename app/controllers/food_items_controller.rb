@@ -5,7 +5,7 @@ class FoodItemsController < ApplicationController
     end
 
     def show
-        @food=FoodItem.find(params[:id])
+        @current_food=FoodItem.find_by(id: session[:food_item_id])
     end
 
     def new
@@ -17,6 +17,7 @@ class FoodItemsController < ApplicationController
     def create
         @food=FoodItem.create(food_params)
         if @food.save
+            session[:food_item_id]=@food.id
             redirect_to new_kitchen_tools_path(@food)
         else
             redirect_to new_food_items_path

@@ -1,0 +1,8 @@
+<h2><%=@current_recipe.title%></h2>
+
+<%@current_recipe.instructions.map do |current|%>
+<li><%=current.content%></li>
+<li><%=@current_recipe.find_name_of_food(current.food_item_id)%></li>
+
+
+<%end%>
