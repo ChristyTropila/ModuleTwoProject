@@ -3,9 +3,12 @@
 
 <%=form_for  @food do |f|%>
 <%=f.label :name%>
-<%=f.collection_select :id, @food_var, :id, :name %>
 
-<%=f.submit 'Name Your Recipe!'%>
+<%=f.collection_select :food, @food_var, :id, :name %>
+<%=f.label :quantity%>
+<%=f.text_field :quantity%>
+
+<%=f.submit 'Add Food!'%>
 <%end%>
 
 

@@ -20,14 +20,10 @@ Rails.application.routes.draw do
   get 'food_items/:id', to: 'food_items#show', as: 'food_item'
 
  
-  
-
-  
-
-  resources :children do
-    resources :recipes
-  end
-
+ get 'kitchen_tools', to: 'kitchen_tools#index', as: 'kitchen_tools'
+ get 'kitchen_tools/new', to: 'kitchen_tools#new', as: 'new_kitchen_tools'
+ post 'kitchen_tools', to: 'kitchen_tools#create'
+ get 'kitchen_tools/:id', to: 'kitchen_tools#show', as: 'kitchen_tool'
 
 
 end

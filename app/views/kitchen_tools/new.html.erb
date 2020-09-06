@@ -1,0 +1,11 @@
+<h3>Choose Your Tools! </h3>
+<hr>
+
+<%=form_for  @tool do |f|%>
+
+<%=f.collection_select :id, @tool_var, :id, :full_description%>
+
+
+
+<%=f.submit 'Add Food!'%>
+<%end%>

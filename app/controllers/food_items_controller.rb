@@ -32,7 +32,7 @@ class FoodItemsController < ApplicationController
     private
 
     def food_params
-        params.require(:food).permit(:id, :name, :quantity)
+        params.permit(:id, :name, :quantity)
 
     end
 
