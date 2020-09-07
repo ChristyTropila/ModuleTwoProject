@@ -3,8 +3,7 @@
 
 <%=form_for  @food do |f|%>
 <%=f.label :name%>
-
-<%=f.collection_select :name, @food_var, :name, :name %>
+<%= f.select :name, options_for_select(FoodItem.all.map {|p| [ p.name ]}.uniq,   "Select Food"),:prompt => "Select Food",:required => true %>
 <%=f.label :quantity%>
 <%=f.text_field :quantity%>
 

@@ -7,7 +7,9 @@
 <%=f.hidden_field :food_item_id, :value => session[:food_item_id]%>
 
 <%=f.label :content%>
-<%=f.collection_select :content, Instruction.all, :content, :content%>
+
+<%= f.select :content, options_for_select(Instruction.all.map {|p| [ p.content ]}.uniq,   "Select Instructions"),:prompt => "Select Instructions",:required => true %>
+
 <%=f.submit 'Create Your Recipe!'%>
 <%end%>
 

@@ -11,7 +11,7 @@ class KitchenToolsController < ApplicationController
 
     def new
         @tool=KitchenTool.new
-        @tool_var=KitchenTool.all
+        @tool_var=KitchenTool.all.distinct
 
     end
 

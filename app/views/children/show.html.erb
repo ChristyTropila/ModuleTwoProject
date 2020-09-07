@@ -1,21 +1,22 @@
 
 
-<h1><p>Logged in as:  <%=@current_child.name%></p></h1>
+<h1><p>Logged in as: <%=@current_child.name%></p></h1>
+<%= link_to "Play Game", new_recipes_path(:child_id => @current_child), :Method => :post %>
+<br>
 <%total_points=0%>
 <p> You Have: <%@current_child.recipes.each do |recipe|%>
-  
-     <%total_points=total_points + recipe.rewarded_points%> 
-             
+   <%total_points=total_points + recipe.rewarded_points%>          
  <%end%>
 
    <%=total_points%> points!
  </p>
  <h2> Recipes </h2>
+ <p>
  <%@current_child.recipes.map do |recipe|%>
  <%=link_to recipe.title, recipe_path%> <br>
-<%end%>
+<%end%> 
+</p>
 
 <br>
 <br>
 
-<%= link_to "Play Game", new_recipes_path(:child_id => @current_child), :Method => :post %>

@@ -3,9 +3,7 @@
 
 <%=form_for  @tool do |f|%>
 
-<%=f.collection_select :description, @tool_var, :full_description, :full_description%>
-
-
+<%=f.collection_select :description, @tool_var.select(:name, :description).distinct, :full_description, :full_description %>
 
 <%=f.submit 'Add Tool!'%>
 <%end%>

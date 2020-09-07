@@ -1,5 +1,5 @@
 class Child < ApplicationRecord
-    has_many :recipes
+    has_many :recipes, dependent: :destroy
 
     def self.current
         Thread.current[:child]
