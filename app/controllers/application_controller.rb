@@ -18,4 +18,8 @@ def current_tool
     session[:kitchen_tool] ||= []
 end
 
+def current_instruction
+    session[:instruction] ||= []
+end
+
 end

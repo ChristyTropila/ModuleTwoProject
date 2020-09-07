@@ -5,7 +5,7 @@ def index
 end
 
 def show
-    @instruction=Instruction.find(params[:id])
+    @current_instruction=Instruction.find_by(id: session[:instruction_id])
 end
 
 def new
@@ -17,6 +17,7 @@ def create
 
  @instruction=Instruction.create(instruction_params)
     if @instruction.save
+        session[:instruction_id]=@instruction.id
         redirect_to recipe_path(@instruction)
     else
         flash[:errors]=@instruction.errors.full_messages
@@ -26,13 +27,13 @@ end
 
 
 def edit
-    @instruction=Instruction.find(params[:id])
+    @current_instruction=Instruction.find_by(id: session[:instruction_id])
 end
 
 def update
-    @instruction=Instruction.find(params[:id])
-    @instruction.update(instruction_params)
-    redirect_to recipe_path(@instruction)
+    @current_instruction=Instruction.find_by(id: session[:instruction_id])
+    @current_instruction.update(instruction_params)
+    redirect_to recipe_path(@current_instruction)
 
 end
 

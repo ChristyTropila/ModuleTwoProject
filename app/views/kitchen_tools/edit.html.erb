@@ -1,0 +1,15 @@
+<h3>Edit Your Tool Choice </h3>
+<hr>
+
+<% if @errors %>
+    <% @errors.each do |error|%>
+   <p style= "color: red"> <%=error%> </p>
+    <%end%>
+<%end%>
+
+<%=form_for  @current_tool do |f|%>
+
+<%=f.collection_select( :description, @tool_var.select(:name, :description).distinct, :full_description, :full_description,  { :prompt => "Select Tool", :selected => params[:description] })%>
+
+<%=f.submit 'Add Tool!'%>
+<%end%>

@@ -7,7 +7,7 @@
 <%end%>
 
 
-<%=form_for  @instruction do |f|%>
+<%=form_for  @current_instruction do |f|%>
 <%=f.hidden_field :recipe_id, :value => session[:recipe_id]%>
 <%=f.hidden_field :kitchen_tool_id, :value => session[:kitchen_tool_id]%>
 <%=f.hidden_field :food_item_id, :value => session[:food_item_id]%>

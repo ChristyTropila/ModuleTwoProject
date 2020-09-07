@@ -28,6 +28,7 @@ class KitchenToolsController < ApplicationController
 
     def edit
         @current_tool=KitchenTool.find_by(id: session[:kitchen_tool_id])
+        @tool_var=KitchenTool.all.distinct
     end
 
     def update

@@ -1,4 +1,4 @@
-<h2>Lets Pick Some Food!</h2>
+<h2>Edit Food Choice</h2>
 
 
 <% if @errors %>
@@ -7,7 +7,7 @@
     <%end%>
 <%end%>
 
-<%=form_for  @food do |f|%>
+<%=form_for  @current_food do |f|%>
 <%=f.label :name%>
 <%= f.select :name, options_for_select(FoodItem.all.map {|p| [ p.name ]}.uniq,   "Select Food"),:prompt => "Select Food",:required => true %>
 <%=f.label :quantity%>
@@ -15,6 +15,3 @@
 
 <%=f.submit 'Add Food!'%>
 <%end%>
-
-
-
