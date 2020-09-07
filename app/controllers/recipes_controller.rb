@@ -6,12 +6,11 @@ class RecipesController < ApplicationController
 
     def show
         @current_recipe=Recipe.find_by(id: session[:recipe_id])
-       
     end
 
     def new
       @recipe=Recipe.new
-     
+      @errors=flash[:errors]
     end
 
     def create
@@ -21,10 +20,9 @@ class RecipesController < ApplicationController
     
         if @recipe.save
             session[:recipe_id]=@recipe.id
-         
-            
             redirect_to new_food_items_path
         else
+            flash[:errors]=@recipe.errors.full_messages
             redirect_to new_recipes_path
         end
     end

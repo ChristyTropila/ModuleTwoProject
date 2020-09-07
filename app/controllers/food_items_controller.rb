@@ -11,6 +11,7 @@ class FoodItemsController < ApplicationController
     def new
         @food_var=FoodItem.all
         @food=FoodItem.new
+        @errors=flash[:errors]
     
     end
 
@@ -20,6 +21,7 @@ class FoodItemsController < ApplicationController
             session[:food_item_id]=@food.id
             redirect_to new_kitchen_tools_path(@food)
         else
+            flash[:errors]=@food.errors.full_messages
             redirect_to new_food_items_path
         end
     end

@@ -4,13 +4,17 @@ class Recipe < ApplicationRecord
   has_many :food_items, through: :instructions
   has_many :kitchen_tools, through: :instructions
 
+  #validations
+  validates :title, presence: {message: "Please Name Your Recipe!"}
+
  
-  
+  #method to keep track of points earned by each player
    def update_points(recipe)
     recipe.rewarded_points += 50
     byebug
    end
 
+   #method takes in a food_item id and gives the name of that item
    def find_name_of_food(food_id)
     food=self.instructions.find do |f|
       f.food_item_id == food_id
@@ -22,6 +26,8 @@ class Recipe < ApplicationRecord
     # byebug
    end
 
+   
+   #method takes in a kitchen_tool_id and gives the name of that tool
    def find_name_of_tool(tool_id)
     tool=self.instructions.find do |f|
       f.kitchen_tool_id == tool_id
@@ -33,6 +39,9 @@ class Recipe < ApplicationRecord
     #  byebug
   end
 
+
+
+  #method takes in a kitchen_tool_id and gives the description of that tool
   def find_descrip_of_tool(tool_id)
     tool=self.instructions.find do |f|
       f.kitchen_tool_id == tool_id

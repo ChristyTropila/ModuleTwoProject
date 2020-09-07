@@ -12,7 +12,7 @@ class KitchenToolsController < ApplicationController
     def new
         @tool=KitchenTool.new
         @tool_var=KitchenTool.all.distinct
-
+        @errors=flash[:errors]
     end
 
     def create
@@ -21,6 +21,7 @@ class KitchenToolsController < ApplicationController
             session[:kitchen_tool_id]=@tool.id
             redirect_to new_instructions_path
         else
+            flash[:errors]=@tool.errors.full_messages
             redirect_to new_kitchen_tools_path
         end
     end

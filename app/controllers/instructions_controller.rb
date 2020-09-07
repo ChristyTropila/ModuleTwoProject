@@ -10,6 +10,7 @@ end
 
 def new
     @instruction=Instruction.new
+    @errors=flash[:errors]
 end
 
 def create
@@ -18,6 +19,7 @@ def create
     if @instruction.save
         redirect_to recipe_path(@instruction)
     else
+        flash[:errors]=@instruction.errors.full_messages
         redirect_to new_instructions_path
     end
 end

@@ -10,6 +10,7 @@ class ChildrenController < ApplicationController
 
     def new
         @child=Child.new
+        @errors=flash[:errors]
     end
 
     def create
@@ -19,6 +20,7 @@ class ChildrenController < ApplicationController
             redirect_to child_path(@child)
             # byebug
         else
+            flash[:errors]=@child.errors.full_messages
             redirect_to new_children_path
     end
     
