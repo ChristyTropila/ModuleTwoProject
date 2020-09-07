@@ -5,4 +5,15 @@ class Instruction < ApplicationRecord
 
   #validations
   validates :content, presence: {message: "Please Pick Your Instructions!"}
+
+
+  
+  def self.food_items(list)
+    byebug
+    FoodItem.find(list.to_s).map{|item| [item.name].join(" ")}.join(', ')
+    byebug
+  end
+
+
+  
 end

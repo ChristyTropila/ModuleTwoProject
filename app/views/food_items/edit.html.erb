@@ -9,7 +9,10 @@
 
 <%=form_for  @current_food do |f|%>
 <%=f.label :name%>
-<%= f.select :name, options_for_select(FoodItem.all.map {|p| [ p.name ]}.uniq,   "Select Food"),:prompt => "Select Food",:required => true %>
+
+<%= f.select :name, FoodItem.all.collect { |food| [food.name, food.name]}.uniq,  {:include_hidden => false}, multiple: true%>
+
+
 <%=f.label :quantity%>
 <%=f.text_field :quantity%>
 

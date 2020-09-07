@@ -11,7 +11,6 @@ class Recipe < ApplicationRecord
   #method to keep track of points earned by each player
    def update_points(recipe)
     recipe.rewarded_points += 50
-    byebug
    end
 
    #method takes in a food_item id and gives the name of that item
@@ -22,10 +21,11 @@ class Recipe < ApplicationRecord
       end
     # byebug
    get_name=FoodItem.all.find(food.food_item_id)
-     return get_name.name
+   return "#{get_name.name} || Quantity:  #{get_name.quantity}" 
     # byebug
    end
 
+ 
    
    #method takes in a kitchen_tool_id and gives the name of that tool
    def find_name_of_tool(tool_id)
@@ -52,7 +52,5 @@ class Recipe < ApplicationRecord
     return get_descrip.description
     #  byebug
   end
-
-
-     
+ 
 end
