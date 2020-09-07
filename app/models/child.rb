@@ -1,5 +1,6 @@
 class Child < ApplicationRecord
     has_many :recipes, dependent: :destroy
+  
 
     #validations
     validates :name, presence: {message: "Please Provide Your Name!"}

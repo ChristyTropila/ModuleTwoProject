@@ -9,12 +9,14 @@
 
 <%=form_for  @food do |f|%>
 <%=f.label :name%>
-<%= f.select :name, FoodItem.all.collect { |food| [food.name, food.name]}.uniq,  {:include_hidden => false}, multiple: true%>
+<%= f.select :name, @food_var.uniq,  {:include_hidden => false}, multiple: true%>
+
 <%=f.label :quantity%>
 <%=f.text_field :quantity%>
 
 <%=f.submit 'Add Food!'%>
 <%end%>
+
 
 
 
