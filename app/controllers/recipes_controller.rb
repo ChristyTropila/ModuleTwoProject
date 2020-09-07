@@ -38,6 +38,9 @@ class RecipesController < ApplicationController
     end
     
     def destroy
+        @current_recipe=Recipe.find_by(id: session[:recipe_id])
+        @current_recipe.destroy
+        redirect_to child_path(@current_recipe)
     end
 
 
