@@ -7,4 +7,5 @@
 <li>Instructions: <%=current.content%></li>
 <%end%>
 <br>
+<%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @current_recipe), :Method => :post%>
 <%= link_to "Return To Dashboard", child_path(:child_id => @current_child), :Method => :post %>

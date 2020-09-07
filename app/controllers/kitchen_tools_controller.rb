@@ -27,9 +27,14 @@ class KitchenToolsController < ApplicationController
     end
 
     def edit
+        @current_tool=KitchenTool.find_by(id: session[:kitchen_tool_id])
     end
 
     def update
+        @current_tool=KitchenTool.find_by(id: session[:kitchen_tool_id])
+        @current_tool.update(kitchen_params)
+        redirect_to edit_instruction_path(@current_tool)
+
     end
 
     def destroy

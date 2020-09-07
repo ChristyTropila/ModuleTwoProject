@@ -26,9 +26,14 @@ end
 
 
 def edit
+    @instruction=Instruction.find(params[:id])
 end
 
 def update
+    @instruction=Instruction.find(params[:id])
+    @instruction.update(instruction_params)
+    redirect_to recipe_path(@instruction)
+
 end
 
 def destroy

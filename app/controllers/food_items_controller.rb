@@ -27,9 +27,17 @@ class FoodItemsController < ApplicationController
     end
 
     def edit
+        @current_food=FoodItem.find_by(id: session[:food_item_id])
+    end
+
+    def update
+        @current_food=FoodItem.find_by(id: session[:food_item_id])
+        @current_food.update(food_params)
+        redirect_to edit_kitchen_tool_path(@current_food)
     end
 
     def destroy
+
     end
 
     private

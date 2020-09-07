@@ -28,9 +28,13 @@ class RecipesController < ApplicationController
     end
 
     def edit
+        @current_recipe=Recipe.find_by(id: session[:recipe_id])
     end
 
     def update
+        @current_recipe=Recipe.find_by(id: session[:recipe_id])
+        @current_recipe.update(recipe_params)
+        redirect_to edit_food_item_path(@current_recipe)
     end
     
     def destroy
