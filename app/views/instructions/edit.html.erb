@@ -7,6 +7,7 @@
 <%end%>
 
 
+
 <%=form_for  @current_instruction do |f|%>
 <%=f.hidden_field :recipe_id, :value => session[:recipe_id]%>
 <%=f.hidden_field :kitchen_tool_id, :value => session[:kitchen_tool_id]%>
@@ -18,3 +19,4 @@
 
 <%=f.submit 'Create Your Recipe!'%>
 <%end%>
+
