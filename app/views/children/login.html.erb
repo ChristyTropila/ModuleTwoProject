@@ -1,5 +1,13 @@
 <h1>Hello Login</h1>
 
+
+
+
+<% if @error %>
+    <p style= "color: red"><%= @error %></p>
+<% end %>
+
+
  <%= form_tag "/send_the_form_here" do %>
   <%= label_tag :name %>
   <%= text_field_tag :name%><br>

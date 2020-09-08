@@ -1,8 +1,10 @@
 
 
 <h1><p>Logged in as: <%=@current_child.name%></p></h1>
+<br>
 <%= link_to "Play Game", new_recipes_path, :Method => :post %>
 <br>
+<%=button_to "Log OUT", logout_path, method: :delete%>
 <%total_points=0%>
 <p> You Have: <%@current_child.recipes.each do |recipe|%>
    <%total_points=total_points + recipe.rewarded_points%>          

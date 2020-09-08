@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'children#login', as: 'login'
   post '/send_the_form_here', to: 'children#handle_login'
+  delete '/logout', to: 'children#logout', as: 'logout'
 
   get 'children', to: 'children#index', as: 'children'
   get 'children/new', to: 'children#new', as:'new_children'
