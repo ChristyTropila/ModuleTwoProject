@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
     def show
         @current_recipe=Recipe.find_by(id: session[:recipe_id])
+        @recipe=Recipe.find(params[:id])
     end
 
     def new
@@ -38,9 +39,9 @@ class RecipesController < ApplicationController
     end
     
     def destroy
-        @current_recipe=Recipe.find_by(id: session[:recipe_id])
-        @current_recipe.destroy
-        redirect_to child_path(@current_recipe)
+        @recipe=Recipe.find(params[:id])
+        @recipe.destroy
+        redirect_to child_path(@recipe)
     end
 
 

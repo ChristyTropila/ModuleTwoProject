@@ -13,7 +13,7 @@
  <h2> Recipes </h2>
  <p>
  <%@current_child.recipes.map do |recipe|%>
- <%=link_to recipe.title, recipe_path%> <br>
+ <%=link_to recipe.title, recipe_path(recipe.id)%> <br>
 <%end%> 
 </p>
 

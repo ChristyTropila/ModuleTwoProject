@@ -6,7 +6,7 @@ end
 
 def show
     @current_instruction=Instruction.find_by(id: session[:instruction_id])
-
+    @current_recipe=Recipe.find_by(id: session[:recipe_id])
 end
 
 def new

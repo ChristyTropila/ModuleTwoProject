@@ -1,12 +1,12 @@
-<h2><%=@current_recipe.title%></h2>
+<h3><%=@recipe.title%></h3>
 
-<%@current_recipe.instructions.map do |current|%>
-<li>Ingredients: <%=@current_recipe.find_name_of_food(current.food_item_id)%></li>
-
-<li><%=@current_recipe.find_name_of_tool(current.kitchen_tool_id)%></li>
-<li>Instructions: <%=current.content%></li>
+<%@recipe.instructions.map do |instru|%>
+<li>FoodItems: <%=@recipe.find_name_of_food(instru.food_item_id)%>
+<li>Tools: <%=@recipe.find_name_of_tool(instru.kitchen_tool_id)%>
+<li>Instructions: <%=instru.content%>
 <%end%>
+<br>
 <br>
 <%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @current_recipe), :Method => :post%>
 <%= link_to "Return To Dashboard", child_path %>
- <%= link_to 'Destroy', @current_recipe, method: :delete %>
+ <%= link_to 'Destroy', @recipe, method: :delete %>
