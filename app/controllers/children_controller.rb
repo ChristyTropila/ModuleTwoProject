@@ -1,5 +1,18 @@
 class ChildrenController < ApplicationController
 
+
+    def login
+    end
+
+    def handle_login
+        @child=Child.find_by(name: params[:name])
+        if @child && @child.authenticate(params[:password])
+          redirect_to child_path(@child)
+        else
+          redirect_to login_path
+        end
+    end
+
     def index
         @children=Child.all
     end
@@ -38,7 +51,7 @@ end
     private
     
     def child_params
-        params.require(:child).permit(:id, :name, :user_name, :age)
+        params.require(:child).permit(:id, :name, :user_name, :age, :password)
     end
 
 end
