@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-
+   skip_before_action :authorized_to_see_page, only: [:login, :handle_login]
 
     #login and logout methods
     def login
@@ -19,10 +19,14 @@ class ChildrenController < ApplicationController
 
     def logout
         @current_child=Child.find_by(id: session[:child_id])
-        @current_child=nil
-        redirect_to login_path
+        session[:child_id]=nil
+        redirect_to welcome_path
     end
 
+
+    #welcome page
+    def welcome
+    end
 
     #crud methods
     def index

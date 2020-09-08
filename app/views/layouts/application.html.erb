@@ -10,7 +10,17 @@
   </head>
 
   <body>
-  <h1>Helllloo Testing application erb</h1>
+   <% if check_and_see_if_someone_is_logged_in?%>
+    <nav>
+       LOGGED IN: <%=@current_child.name%>
+       <%= button_to "LOG OUT", logout_path, method: :delete%>
+    
+    </nav>
+    <%else%>
+    <nav>
+       <%=link_to "LOGIN", login_path %>
+    </nav>
+    <%end%>
     <%= yield %>
   </body>
 </html>
