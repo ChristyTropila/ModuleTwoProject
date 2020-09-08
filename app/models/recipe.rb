@@ -15,10 +15,10 @@ class Recipe < ApplicationRecord
 
    #method takes in a food_item id and gives the name of that item
    def find_name_of_food(food_id)
-    # byebug
    get_name=FoodItem.all.find(food_id)
-   return "#{get_name.name} || Quantity:  #{get_name.quantity}" 
-    # byebug
+
+   return "#{get_name.name.parameterize.titleize} || Quantity:  #{get_name.quantity}" 
+     byebug
    end
 
  
