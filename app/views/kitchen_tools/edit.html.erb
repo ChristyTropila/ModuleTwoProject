@@ -9,7 +9,7 @@
 
 <%=form_for  @current_tool do |f|%>
 
-<%=f.collection_select( :description, @tool_var.select(:name, :description).distinct, :full_description, :full_description,  { :prompt => "Select Tool", :selected => params[:description] })%>
+ <%= f.select :name, options_for_select(KitchenTool.all.map {|p| [ p.name ]}.uniq,   "Select Tools"),  :required => true %>
 
 <%=f.submit 'Add Tool!'%>
 <%end%>

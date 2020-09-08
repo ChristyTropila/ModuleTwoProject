@@ -15,24 +15,19 @@ class Recipe < ApplicationRecord
 
    #method takes in a food_item id and gives the name of that item
    def find_name_of_food(food_id)
-    byebug
+    # byebug
    get_name=FoodItem.all.find(food_id)
    return "#{get_name.name} || Quantity:  #{get_name.quantity}" 
-    byebug
+    # byebug
    end
 
  
    
    #method takes in a kitchen_tool_id and gives the name of that tool
    def find_name_of_tool(tool_id)
-    tool=self.instructions.find do |f|
-      f.kitchen_tool_id == tool_id
-    end
-   
-    get_name=KitchenTool.all.find(tool.kitchen_tool_id)
-    # byebug
+    get_name=KitchenTool.all.find(tool_id)
     return get_name.name
-    #  byebug
+  #  byebug
   end
 
 

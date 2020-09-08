@@ -1,11 +1,5 @@
 <h2>What Will You Do Next? </h2>
 
-<% if @errors %>
-    <% @errors.each do |error|%>
-   <p style= "color: red"> <%=error%> </p>
-    <%end%>
-<%end%>
-
 
 <%=form_for  @instruction do |f|%>
 <%=f.hidden_field :recipe_id, :value => session[:recipe_id]%>

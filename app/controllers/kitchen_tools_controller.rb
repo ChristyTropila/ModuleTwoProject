@@ -10,12 +10,15 @@ class KitchenToolsController < ApplicationController
     end
 
     def new
+     
         @tool=KitchenTool.new
-        @tool_var=KitchenTool.all.distinct
+        @tool_cond=KitchenTool.all.select{|tool| tool.name!=nil}
+        # @tool_var=@tool_cond.map{|tool| [tool.name, tool.description]}
         @errors=flash[:errors]
     end
 
     def create
+    
         @tool=KitchenTool.create(kitchen_params)
         if @tool.save
             session[:kitchen_tool_id]=@tool.id
@@ -44,6 +47,6 @@ class KitchenToolsController < ApplicationController
     private
 
     def kitchen_params
-        params.require(:kitchen_tool).permit(:name, :description)
+        params.require(:kitchen_tool).permit(:name)
     end
 end

@@ -14,9 +14,9 @@ Child.destroy_all
 
 
 
-kitch=KitchenTool.create!(name: "Hammer", description: "Smashes most food")
-kitch1=KitchenTool.create!(name: "Grandmas Favorite Spoon", description: "Shhhh don't tell Grandma")
-kitch3=KitchenTool.create!(name: "ChopSticks", description: "These could be used to to build a really cool cake")
+kitch=KitchenTool.create!(name: "Hammer - Smashes most food")
+kitch1=KitchenTool.create!(name: "Grandmas Favorite Spoon - Shhhh don't tell Grandma")
+kitch3=KitchenTool.create!(name: "ChopSticks - These could be used to to build a really cool cake")
 
 instruction1=Instruction.create!(content: "Throw everything into a bowl. Stir. Give your dog a taste to see if they like it.")
 instruction2=Instruction.create!(content: "Give up and go outside and play. Leave mess for your parents")

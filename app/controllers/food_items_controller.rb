@@ -12,12 +12,12 @@ class FoodItemsController < ApplicationController
         @food=FoodItem.new
         @food_cond=FoodItem.all.select{|food| food.quantity==nil}
         @food_var=@food_cond.map{|food| [food.name]}
-        byebug
+
         @errors=flash[:errors]
     end
 
     def create
-        byebug
+        
         @food=FoodItem.find_or_create_by(food_params)
         if @food.save
             session[:food_item_id]=@food.id

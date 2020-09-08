@@ -1,0 +1,5 @@
+ <%@current_child.recipes.map do |f| %>
+  <%=link_to f.title, recipe_path(@current_child)%>
+
+
+  <%end%>

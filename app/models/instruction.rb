@@ -8,11 +8,10 @@ class Instruction < ApplicationRecord
 
 
   
-  def self.food_items(list)
-    byebug
-    FoodItem.find(list.to_s).map{|item| [item.name].join(" ")}.join(', ')
-    byebug
-  end
+  # def self.food_items(list)
+  #   FoodItem.find(list.to_s).map{|item| [item.name].join(" ")}.join(', ')
+   
+  # end
 
 
   

@@ -2,12 +2,11 @@ class RecipesController < ApplicationController
 
     def index
         @recipes=Recipe.all
+        @current_child=Child.find_by(id: session[:child_id])
     end
 
     def show
         @current_recipe=Recipe.find_by(id: session[:recipe_id])
-   
-
     end
 
     def new
@@ -18,10 +17,9 @@ class RecipesController < ApplicationController
     def create
         @recipe=Recipe.create(recipe_params)
         @recipe.update_points(@recipe)
-        byebug
     
         if @recipe.save
-            session[:recipe_id]=@recipe.id
+             session[:recipe_id]=@recipe.id
             redirect_to new_food_items_path
         else
             flash[:errors]=@recipe.errors.full_messages

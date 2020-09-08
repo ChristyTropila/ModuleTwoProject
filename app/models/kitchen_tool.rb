@@ -7,7 +7,7 @@ class KitchenTool < ApplicationRecord
 
     #method that displays both name and description in dropdown
     def full_description
-        "Tool: #{name}   ||| Description: #{description}"
+        "Tool: #{self.name}   ||| Description: #{self.description}"
     end
  
 end
