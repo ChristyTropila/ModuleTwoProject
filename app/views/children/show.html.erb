@@ -10,15 +10,18 @@
  </h2>
  <h2 class="title is-4"> Recipes </h2>
 
- <%@current_child.recipes.map do |recipe|%>
+
+<div class="columns is-vcentered">
+ <div class="column is-8">
  
- <div class="column is-one-third">
  <div class="card recipe">
 <div class="card-content">
+ <%@current_child.recipes.map do |recipe|%>
 <%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%> 
 </div>
 </div>
-</div>
+
+
 
 <%end%>
 
