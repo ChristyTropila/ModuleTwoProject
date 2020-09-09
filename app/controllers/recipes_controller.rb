@@ -12,6 +12,8 @@ class RecipesController < ApplicationController
 
     def new
       @recipe=Recipe.new
+      @current_child=Child.find_by(id: session[:child_id])
+
       @errors=flash[:errors]
     end
 

@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-   skip_before_action :authorized_to_see_page, only: [:login, :handle_login]
+   skip_before_action :authorized_to_see_page, only: [:login, :handle_login, :new, :create]
 
     #login and logout methods
     def login

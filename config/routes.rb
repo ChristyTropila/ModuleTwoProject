@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '', to: 'children#welcome', as: 'welcome'
-
+  
 
   get '/login', to: 'children#login', as: 'login'
   post '/send_the_form_here', to: 'children#handle_login'

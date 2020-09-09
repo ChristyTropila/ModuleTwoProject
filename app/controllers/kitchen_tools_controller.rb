@@ -10,10 +10,9 @@ class KitchenToolsController < ApplicationController
     end
 
     def new
-     
         @tool=KitchenTool.new
         @tool_cond=KitchenTool.all.select{|tool| tool.name!=nil}
-        # @tool_var=@tool_cond.map{|tool| [tool.name, tool.description]}
+
         @errors=flash[:errors]
     end
 
