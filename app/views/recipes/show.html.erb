@@ -2,7 +2,7 @@
 
 <%@recipe.instructions.map do |instru|%>
 <li>FoodItems: <%=@recipe.find_name_of_food(instru.food_item_id)%>
-<li>Tools: <%=@recipe.find_name_of_tool(instru.kitchen_tool_id)%>
+<li>Tool: <%=@recipe.find_name_of_tool(instru.kitchen_tool_id)%>
 <li>Instructions: <%=instru.content%>
 <%end%>
 <br>

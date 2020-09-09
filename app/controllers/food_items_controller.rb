@@ -17,7 +17,6 @@ class FoodItemsController < ApplicationController
     end
 
     def create
-        
         @food=FoodItem.find_or_create_by(food_params)
         if @food.save
             session[:food_item_id]=@food.id
