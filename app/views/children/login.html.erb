@@ -1,14 +1,9 @@
+<div class="login-form">
 <h1>Login</h1>
-
-
-
-
 <% if @error %>
-    <p style= "color: red"><%= @error %></p>
+  <p style= "color: red"><%= @error %></p>
 <% end %>
-
-
- <%= form_tag "/send_the_form_here" do %>
+<%= form_tag "/send_the_form_here" do %>
   <%= label_tag :name %>
   <%= text_field_tag :name%><br>
   <%= label_tag :user_name%>
@@ -16,4 +11,6 @@
   <%= label_tag :password%>
   <%= password_field_tag :password %><br>
   <%= submit_tag "Login!"%>
-  <%end%>
+<%end%>
+
+</div>

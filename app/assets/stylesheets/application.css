@@ -1,14 +1,50 @@
+ body{
+ background-color: #f66747;
+ width:100%;
+ height: 100rem;
+ padding: 4rem;
+ }
 
+ .main-content{
+  margin: auto;
+  width: 60%;
+  border: 30px solid #f66747;
+  padding: 10px;
+ }
+/*
+html{
+  background-color: #efc458;
+  font-size:20px;
+  padding: 3rem;
+} 
 
-.welcome{
-
-    color: green;
+a.button.is-link{
+  background-color: #00A08F;
 }
 
-.columns {
-    display: flex;
+ul{
+  color: white;
+}
+li{
+  color:#1c4755;
+}
+a{
+  color: white;
+}
+.jumbotron{
+  background-color: #00a08f;
+
+  width: 100%
+
 }
 
-.column{
-    display: flex;
+.navbar{
+  background-color: #1c4755;
+}  */
+
+.login-form{
+  margin: auto;
+  width: 60%;
+  border: 30px solid #f66747;
+  padding: 10px;
 }

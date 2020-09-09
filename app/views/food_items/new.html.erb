@@ -1,24 +1,13 @@
 <h2>Lets Pick Some Food!</h2>
-
-
 <% if @errors %>
-    <% @errors.each do |error|%>
-   <p style= "color: red"> <%=error%> </p>
-    <%end%>
+  <% @errors.each do |error|%>
+    <p style= "color: red"> <%=error%> </p>
+  <%end%>
 <%end%>
-
 <%=form_for  @food do |f|%>
-<%=f.label :name%>
-<%= f.select :name, @food_var.uniq,  {:include_hidden => false}, multiple: true%>
-
-
-
-<%=f.label :quantity%>
-<%=f.text_field :quantity%>
-
-<%=f.submit 'Add Food!'%>
+  <%=f.label :name%>
+  <%= f.select :name, @food_var.uniq,  {:include_hidden => false}, multiple: true%>
+  <%=f.label :quantity%>
+  <%=f.text_field :quantity%>
+  <%=f.submit 'Add Food!'%>
 <%end%>
-
-
-
-

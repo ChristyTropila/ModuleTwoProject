@@ -1,3 +1,4 @@
+<section class="middle-contaitner">
 <%total_points=0%>
 <h2 class="title is-5">
 <div class="welcome">Welcome <%=@current_child.name.capitalize%>, You Have: <%@current_child.recipes.each do |recipe|%>
@@ -8,22 +9,22 @@
    
 <%=link_to "Create New Recipe!", new_recipes_path, :Method => :post %>
  </h2>
+ 
  <h2 class="title is-4"> Recipes </h2>
 
+<div class="tile is-ancestor">
 
-<div class="columns is-vcentered">
- <div class="column is-8">
- 
- <div class="card recipe">
-<div class="card-content">
- <%@current_child.recipes.map do |recipe|%>
-<%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%> 
-</div>
-</div>
-
-
-
+<%@current_child.recipes.map do |recipe|%>
+  <div class= "tile">
+  <%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%>
+  </div>
 <%end%>
+</div>
+
+
+
+
+
 
 
 
