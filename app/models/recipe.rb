@@ -7,7 +7,10 @@ class Recipe < ApplicationRecord
   #validations
   validates :title, presence: {message: "Please Name Your Recipe!"}
 
- 
+ #gem to upload pics
+ mount_uploader :image, ImageUploader
+
+
   #method to keep track of points earned by each player
    def update_points(recipe)
     recipe.rewarded_points += 50

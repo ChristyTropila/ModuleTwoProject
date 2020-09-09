@@ -1,5 +1,5 @@
 <h3><%=@recipe.title%></h3>
-
+<%=image_tag @recipe.image.url%>
 <%@recipe.instructions.map do |instru|%>
 <li>FoodItems: <%=@recipe.find_name_of_food(instru.food_item_id)%>
 <li>Tool: <%=@recipe.find_name_of_tool(instru.kitchen_tool_id)%>

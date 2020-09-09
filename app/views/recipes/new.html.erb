@@ -7,8 +7,11 @@
 <%end%>
 
 
+
 <%=form_for  @recipe do |f|%>
 <%=f.hidden_field :child_id, :value => session[:child_id]%>
+<%=f.label :image%>
+<%=f.file_field :image%>
 
 <%=f.text_field :title%>
 <%=f.submit 'Name Your Recipe!'%>

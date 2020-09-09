@@ -1,14 +1,17 @@
 <h2>What Will You Do Next? </h2>
-
+<div>
 
 <%=form_for  @instruction do |f|%>
 <%=f.hidden_field :recipe_id, :value => session[:recipe_id]%>
 <%=f.hidden_field :kitchen_tool_id, :value => session[:kitchen_tool_id]%>
 <%=f.hidden_field :food_item_id, :value => session[:food_item_id]%>
 
+
+
 <%=f.label :content%>
 
 <%= f.select :content, options_for_select(Instruction.all.map {|p| [ p.content ]}.uniq,   "Select Instructions"),:prompt => "Select Instructions",:required => true %>
+
 
 <%=f.submit 'Create Your Recipe!'%>
 <%end%>

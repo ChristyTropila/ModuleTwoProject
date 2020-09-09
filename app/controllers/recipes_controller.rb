@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
     end
 
     def create
+        byebug
         @recipe=Recipe.create(recipe_params)
         @recipe.update_points(@recipe)
     
@@ -50,7 +51,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_params
-        params.require(:recipe).permit(:id, :title, :child_id)
+        params.require(:recipe).permit(:id, :title, :image, :child_id)
     end
 
 

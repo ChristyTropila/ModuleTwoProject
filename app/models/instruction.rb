@@ -7,6 +7,5 @@ class Instruction < ApplicationRecord
   validates :content, presence: {message: "Please Pick Your Instructions!"}
 
 
-
   
 end
