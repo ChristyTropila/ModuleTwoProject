@@ -1,21 +1,28 @@
-
-
 <%total_points=0%>
-<p> You Have: <%@current_child.recipes.each do |recipe|%>
+<h2 class="title is-5">
+<div class="welcome">Welcome <%=@current_child.name.capitalize%>, You Have: <%@current_child.recipes.each do |recipe|%>
    <%total_points=total_points + recipe.rewarded_points%>          
  <%end%>
-   <%=total_points%> points!
- </p>
- <br>
- <br>
- <br>
-<%= link_to "Create New Recipe!", new_recipes_path, :Method => :post %>
- <h2> Recipes </h2>
- <p>
+   <%=total_points%> points! 
+   </div>
+   
+<%=link_to "Create New Recipe!", new_recipes_path, :Method => :post %>
+ </h2>
+ <h2 class="title is-4"> Recipes </h2>
+
  <%@current_child.recipes.map do |recipe|%>
- <%=link_to recipe.title, recipe_path(recipe.id)%> <br>
-<%end%> 
-</p>
+ 
+ <div class="column is-one-third">
+ <div class="card recipe">
+<div class="card-content">
+<%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%> 
+</div>
+</div>
+</div>
+
+<%end%>
+
+
 
 <br>
 <br>

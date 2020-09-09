@@ -1,12 +1,21 @@
-<h3><%=@recipe.title%></h3>
-<%=image_tag @recipe.image.url%>
+<div class="card recipe">
+<div class= "card-content">
+<p class="title"><%=@recipe.title%></p>
+<%=image_tag @recipe.image.url, class: "recipe-show"%>
+<div class= "subtitle is-5">
+<ul>
 <%@recipe.instructions.map do |instru|%>
-<li>FoodItems: <%=@recipe.find_name_of_food(instru.food_item_id)%>
-<li>Tool: <%=@recipe.find_name_of_tool(instru.kitchen_tool_id)%>
-<li>Instructions: <%=instru.content%>
+<li><strong>FoodItems:</strong> <%=@recipe.find_name_of_food(instru.food_item_id)%>
+<li><strong>Tool: </strong> <%=@recipe.find_name_of_tool(instru.kitchen_tool_id)%>
+<li><strong>Instructions: </strong> <%=instru.content%>
 <%end%>
+</ul>
+</div>
 <br>
-<br>
+<div class=" subtitle is-5">
 <%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @current_recipe), :Method => :post%>
 <%= link_to "Return To Dashboard", child_path %>
  <%= link_to 'Destroy', @recipe, method: :delete %>
+</div>
+</div>
+</div>

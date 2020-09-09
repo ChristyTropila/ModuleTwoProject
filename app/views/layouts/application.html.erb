@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ModleTwoProject</title>
+    <title>Quarantine Cuisine</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   </head>
 
   <body>
+  <section class="section">
+     <nav>
+       <h1 class= "title">QUARANTINE CUISINE</h1>
+       <%=link_to "NEW USER", new_children_path%><br>
+       <%=link_to "LOGIN", login_path %>
+    </nav>
    <% if check_and_see_if_someone_is_logged_in?%>
     <nav>
        LOGGED IN: <%=@current_child.name%>
@@ -17,11 +26,10 @@
     
     </nav>
     <%else%>
-    <nav>
-       <h1>QUARANTINE CUISINE</h1>
-       <%=link_to "New Users", new_children_path%>
-    </nav>
     <%end%>
+    </section>
+    <section class= "section">
     <%= yield %>
+    </section>
   </body>
 </html>
