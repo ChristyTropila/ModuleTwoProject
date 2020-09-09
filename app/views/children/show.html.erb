@@ -1,33 +1,27 @@
-<section class="middle-contaitner">
-<%total_points=0%>
-<h2 class="title is-5">
-<div class="welcome">Welcome <%=@current_child.name.capitalize%>, You Have: <%@current_child.recipes.each do |recipe|%>
-   <%total_points=total_points + recipe.rewarded_points%>          
- <%end%>
-   <%=total_points%> points! 
-   </div>
-   
-<%=link_to "Create New Recipe!", new_recipes_path, :Method => :post %>
- </h2>
- 
- <h2 class="title is-4"> Recipes </h2>
-
-<div class="tile is-ancestor">
-
-<%@current_child.recipes.map do |recipe|%>
-  <div class= "tile">
-  <%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%>
+<div class="middle-container">
+  <%total_points=0%>
+  <h2 class="title is-2">
+    <div class="welcome">Welcome <%=@current_child.name.capitalize%>, You Have: <%@current_child.recipes.each do |recipe|%>
+        <%total_points=total_points + recipe.rewarded_points%>
+      <%end%>
+      <%=total_points%> points! 
+      <div class="link">
+    <%=link_to "Create New Recipe!", new_recipes_path, :Method => :post %>
   </div>
-<%end%>
-</div>
+  </div>
+    </div>
+    <br>
+    <br>
+   
+<h2 class="title is-2"> Recipes </h2>
+ <div class="recipe-section">
+  <div class="recipe-list is-ancestor">
+    <%@current_child.recipes.map do |recipe|%>
+      <div class= "tile">
+        <%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%>
+      </div>
+    <%end%>
+    </div>
+  </div>
 
-
-
-
-
-
-
-
-<br>
-<br>
-
+ 

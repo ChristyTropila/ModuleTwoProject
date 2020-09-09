@@ -1,7 +1,6 @@
 <h2><%=@current_recipe.title%></h2>
 
 <%@current_recipe.instructions.map do |current|%> 
-<%byebug%>
 <li>Ingredients: <%=@current_recipe.find_name_of_food(current.food_item_id)%></li>
 
 <li>Tool: <%=@current_recipe.find_name_of_tool(current.kitchen_tool_id)%></li>

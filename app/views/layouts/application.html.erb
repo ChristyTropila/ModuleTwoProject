@@ -6,35 +6,33 @@
     <%= csp_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <div class="container">
-      <ul class="navbar sticky-top navbar-expand-lg navbar-light">
-        <h1 class="text-md-center display-1 mt-1">Quarantine Cuisine</h1>
+      <ul class="navbar sticky-top ">
+        <h1 class="display-1 mt-1">Quarantine Cuisines.</h1>
         </ul>
-        <br>
         <ul class="nav nav-tabs">
-          <% if check_and_see_if_someone_is_logged_in?%>
-            LOGGED IN: <%=@current_child.name%>
-            <br>
-            <li class="nav-item">
-              <%= button_to "LOG OUT", logout_path, method: :delete%> </li>
+              <% if check_and_see_if_someone_is_logged_in?%>
+            LOGGED IN: <%=@current_child.name.capitalize%>
+            </ul>
+            <ul class="nav-item">
+              <%=button_to "LOG OUT", logout_path, method: :delete%> 
           <%else%>
-           <li class="nav-item"><%=link_to "NEW USER", new_children_path%></li>
+          <li class="nav-item"><%=link_to "NEW USER", new_children_path%></li>
           <%end%>
-        </ul>
-      <hr/>
+          </ul> 
+        
     </div>
     <div class="main-content">
     <%= yield %>
     </div>
     <footer class= "navbar fixed-bottom pb-0">
       <div class="container justify-content-center">
-        <p class="lead"> Chrisy Tropila </p>
+        <p class="lead"> Module Two Project By Christy Tropila 2020 </p>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
