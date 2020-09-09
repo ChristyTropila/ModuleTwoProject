@@ -9,7 +9,7 @@ class ChildrenController < ApplicationController
     def handle_login
         @child=Child.find_by(name: params[:name])
         if @child && @child.authenticate(params[:password])
-            cookies[:child_id]=@child.id
+            session[:child_id]=@child.id
           redirect_to child_path(@child)
         else
           flash[:error] = "Incorrect name, username, or password"
@@ -18,8 +18,7 @@ class ChildrenController < ApplicationController
     end
 
     def logout
-        @current_child=Child.find_by(id: session[:child_id])
-        @current_child=nil
+        session[:child_id]=nil
         redirect_to login_path
     end
 
