@@ -1,8 +1,9 @@
-<div class="card recipe">
-<div class= "card-content">
-<p class="title"><%=@recipe.title%></p>
+ <div class="container-recipe">
+      <div class="card " style="width: 50rem; height:40rem">
+   <div class="card-body">
 <%=image_tag @recipe.image.url, class: "recipe-show"%>
-<div class= "subtitle is-5">
+<p class="title"><%=@recipe.title%></p>
+<div class= "subtitle">
 <ul>
 <%@recipe.instructions.map do |instru|%>
 <li><strong>FoodItems:</strong> <%=@recipe.find_name_of_food(instru.food_item_id)%>
@@ -19,3 +20,4 @@
 </div>
 </div>
 </div>
+</div>    

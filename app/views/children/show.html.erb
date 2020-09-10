@@ -6,35 +6,29 @@
       <%end%>
       <%=total_points%> points! 
       <div class="link">
-    <%=link_to "Create New Recipe!", new_recipes_path %>
-  </div>
-  </div>
+        <%=link_to "Create New Recipe!", new_recipes_path %>
+      </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-  
-<div class="container">
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container-child">
     <div class="row">
-    <%if @current_child.recipes.empty?%>
-    <h1>Future Recipe Book</h1>
-    <%else%>
-   <%@current_child.recipes.map do |recipe|%>
-    <div class="col-4 my-3 mx-1"> 
-    <div class="card " style="width: 18rem; height:35rem">
-  <img class="card-img-top" src= <%=recipe.image.url%> alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title justify-content-center"><%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%></h5>
+      <%if @current_child.recipes.empty?%>
+        <h1>Future Recipe Book! Click "Create New Recipe" To Get Started!</h1>
+      <%else%>
+        <%@current_child.recipes.map do |recipe|%>
+          <div class="col-4 my-3 mx-1">
+            <div class="card " style="width: 18rem; height:35rem">
+              <img class="card-img-top" src= <%=recipe.image.url%> alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title justify-content-center"><%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%></h5>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
   </div>
-</div>
- 
- </div>
-  <%end%>
-   <%end%>
- 
-  </div>
-  </div>
-  
-
- 
