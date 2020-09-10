@@ -7,7 +7,6 @@
     <%end%>
   <%end%>
   <%=form_for @current_recipe do |f|%>
-  <%byebug%>
     <%=f.hidden_field :child_id, :value => session[:child_id]%>
     <div class="form-group">
       <%=f.label :image%>

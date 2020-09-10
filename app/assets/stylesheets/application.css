@@ -27,6 +27,27 @@ input{
   height: 25px;
 }
 
+input#recipe_title{
+  background-color: #efc458;
+}
+input#recipe_image{
+  background-color: #efc458;
+}
+
+select#food_item_name{
+  background-color: #efc458;
+}
+input#food_item_quantity{
+  background-color: #efc458;
+}
+
+select#kitchen_tool_name{
+  background-color: #efc458;
+}
+
+select#instruction_content{
+  background-color: #efc458;
+}
 
 a{
   color:   #1c4755;

@@ -14,11 +14,12 @@
   <br>
   <br>
   <br>
+    <%if @current_child.recipes.empty?%>
+        <div class="empty-book">
+        </div>
+      <%else%>
   <div class="container-child">
     <div class="row">
-      <%if @current_child.recipes.empty?%>
-        <h1>Future Recipe Book! Click "Create New Recipe" To Get Started!</h1>
-      <%else%>
         <%@current_child.recipes.map do |recipe|%>
           <div class="col-4 my-3 mx-1">
             <div class="card " style="width: 18rem; height:35rem">
