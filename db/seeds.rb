@@ -14,11 +14,13 @@ Child.destroy_all
 
 
 
-kitch=KitchenTool.create!(name: "Hammer ")
+kitch=KitchenTool.create!(name: "The Tv Remote")
 kitch1=KitchenTool.create!(name: "Grandmas Favorite Spoon")
-kitch3=KitchenTool.create!(name: "Chopsticks ")
+kitch3=KitchenTool.create!(name: "Your Cool New Lightsaber")
+kitch33=KitchenTool.create!(name: "Just Use Your Hands")
 kitch5=KitchenTool.create!(name: "Tree Branch")
 kitch6=KitchenTool.create!(name: "Your Parents Shiny New Toothbrush")
+kitch7=KitchenTool.create!(name: "A Cool Pen")
 
 instruction1=Instruction.create!(content: "Throw everything into a bowl. Stir. Give your pet a taste to see if they like it")
 instruction2=Instruction.create!(content: "Give up and go outside and play. Leave mess for your parents")
@@ -31,9 +33,13 @@ child1=Child.create!(name: "Bobby", user_name: "testing", age: 43)
 recipe=Recipe.create!(title: "Testing", rewarded_points: 5, child_id: child1.id)
 
 
-food1=FoodItem.create!(name: "Ketchup,")
-food2=FoodItem.create!(name: "Mustard,")
-food3=FoodItem.create!(name: "Pet Hair,")
-food4=FoodItem.create!(name: "Ear Wax,")
-food5=FoodItem.create!(name: "Dirt,")
-food6=FoodItem.create!(name: "Cheese Sauce,")
+food1=FoodItem.create!(name: "Ketchup")
+food93=FoodItem.create!(name: "French Frys")
+food2=FoodItem.create!(name: "Mustard")
+food34=FoodItem.create!(name: "Spaghetti")
+food34=FoodItem.create!(name: "Gummy Worms")
+food59=FoodItem.create!(name: "Pepsi")
+food3=FoodItem.create!(name: "Pet Hair")
+food9=FoodItem.create!(name: "Chicken Nuggets")
+food5=FoodItem.create!(name: "Dirt")
+food6=FoodItem.create!(name: "Cheese Sauce")

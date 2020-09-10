@@ -4,6 +4,11 @@
   font-weight:bold;
 }
 
+.welcome-child{
+  font-size: 35px;
+  font-weight:bold;
+}
+
 .display-1{
   color:  #f66747;
   font-weight: bold;
@@ -125,7 +130,11 @@ a.button.is-link{
 }
 
 .card-body {
-  flex-direction: column;
+  background-color: #efc458;
+
+}
+
+.card{
   background-color: #efc458;
 }
 
@@ -149,17 +158,19 @@ img{
 }
 
 .container-recipe{
-  margin: 170px;
-  padding: 40px;
-  justify-items: center;
-  background-color:#00A08F;
+ padding: 200px;
+  background-color: white;
+  margin:30px;
 }
 
 p.title{
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: bold;
+
 }
 
 li{
+  padding:20px;
   font-size: 22px;
 }
 
