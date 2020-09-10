@@ -13,7 +13,7 @@ class Child < ApplicationRecord
     validates :age, numericality: { only_integer: true }, :inclusion => 10..100
   {  message: "Minimum age to play is 10!"}
 
-    #will use bcrypt to make sure password is secure
+  #   #will use bcrypt to make sure password is secure
     has_secure_password
 
 end

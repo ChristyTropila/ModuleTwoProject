@@ -1,6 +1,8 @@
 .display-1{
   color:  #f66747;
   font-weight: bold;
+  font-size: 100px;
+  font-stretch: semi-expanded;
 }
 
 .container{
@@ -12,21 +14,22 @@
 }
 
 a{
-  color:  #00A08F;
+  color:   #1c4755;
 }
 
  body{
  background-color: white;
- text-decoration-color: blueviolet;
- color:  #00A08F;
+ color:   #1c4755;
  width:100%;
  padding: 2rem;
+ 
  } 
 
  .main-content{
   margin: auto;
-  width: 80%;
-  padding: 40px;
+  width: 60%;
+  padding:40px;
+
  
  }
 
@@ -39,13 +42,36 @@ a{
 }
 
 .nav-tabs {
-  color:  #00A08F;
+  color:  #1c4755;
+}
+
+input{
+  margin: 50px, 0,0,0
 }
 
 .tile{
   background-color: #efc458;
-  font-size:25px;
-  padding: 20px;
-  margin: 30px;
+  font-size:40px;
+  padding: 1px;
+  margin:60px;
   
+}
+a.button.is-link{
+  color: #1c4755;
+  font-weight: bold;
+  float: right;
+  padding: 5px;
+  margin:10px;
+}
+
+img{
+  border: 20px solid, #00A08F;;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.recipe-list{
+  background-color:#00A08F;
+  padding: 50px;
 }

@@ -13,11 +13,11 @@
     <br>
     <br>
    
-<h2 class="title is-2"> Recipes </h2>
  <div class="recipe-section">
   <div class="recipe-list is-ancestor">
     <%@current_child.recipes.map do |recipe|%>
       <div class= "tile">
+       <%=image_tag recipe.image.url%>
         <%=link_to recipe.title, recipe_path(recipe.id), class: 'button is-link'%>
       </div>
     <%end%>

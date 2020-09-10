@@ -18,19 +18,20 @@
         <ul class="nav nav-tabs">
               <% if check_and_see_if_someone_is_logged_in?%>
             LOGGED IN: <%=@current_child.name.capitalize%>
-            </ul>
+            
             <ul class="nav-item">
               <%=button_to "LOG OUT", logout_path, method: :delete%> 
           <%else%>
           <li class="nav-item"><%=link_to "NEW USER", new_children_path%></li>
           <%end%>
           </ul> 
+          </ul>
         
     </div>
     <div class="main-content">
     <%= yield %>
     </div>
-    <footer class= "navbar fixed-bottom pb-0">
+    <footer class= "navbar fixed-bottom mt-1">
       <div class="container justify-content-center">
         <p class="lead"> Module Two Project By Christy Tropila 2020 </p>
       </div>
