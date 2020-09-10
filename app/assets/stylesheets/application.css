@@ -1,3 +1,9 @@
+.welcome{
+  margin:150px;
+  font-size: 30px;
+  font-weight:bold;
+}
+
 .display-1{
   color:  #f66747;
   font-weight: bold;
@@ -54,7 +60,7 @@ a{
 
  .row{
    flex-wrap: nowrap;
-   margin-top:80px;
+   margin-top: 40px;
    padding: 80px;
    width:auto;
    background: #00A08F;
@@ -140,4 +146,8 @@ img{
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.btn-primary{
+  background-color:  #f66747;
 }
