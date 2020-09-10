@@ -12,26 +12,25 @@
   </head>
   <body>
     <div class="container">
-      <ul class="navbar sticky-top ">
-        <h1 class="display-1 mt-1">Quarantine Cuisines.</h1>
-        </ul>
-        <ul class="nav nav-tabs">
+      <div class="navbar sticky-top ">
+        <h1 class="display-1 mt-1 text-sm-center">Quarantine Cuisines.</h1>
+        </div>
+        <div class="nav">
               <% if check_and_see_if_someone_is_logged_in?%>
             LOGGED IN: <%=@current_child.name.capitalize%>
-            
-            <ul class="nav-item">
+            <div class="nav-item">
               <%=button_to "LOG OUT", logout_path, method: :delete%> 
           <%else%>
-          <li class="nav-item"><%=link_to "NEW USER", new_children_path%></li>
+          <li class="nav-item"><%=link_to "NEW USER? CLICK HERE!", new_children_path%></li>
           <%end%>
-          </ul> 
-          </ul>
+          </div> 
+          </div>
         
     </div>
     <div class="main-content">
     <%= yield %>
     </div>
-    <footer class= "navbar fixed-bottom mt-1">
+    <footer class= "footer">
       <div class="container justify-content-center">
         <p class="lead"> Module Two Project By Christy Tropila 2020 </p>
       </div>
