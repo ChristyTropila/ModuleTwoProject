@@ -29,7 +29,7 @@ end
 
 
 def edit
-    @current_instruction=Instruction.find_by(id: session[:instruction_id])
+   @current_instruction=Instruction.find_by(id: session[:instruction_id])
 end
 
 def update

@@ -10,7 +10,7 @@
 <li>Instructions: <%=current.content%></li>
 <%end%>
 <br>
-<%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @current_recipe), :Method => :post%>
+<%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @current_recipe.id), :Method => :post%>
 <%= link_to "Return To Dashboard", child_path %>
  <%= link_to 'Destroy', @current_recipe, method: :delete %>
 </div>

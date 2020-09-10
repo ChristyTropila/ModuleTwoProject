@@ -14,7 +14,7 @@
 </div>
 <br>
 <div class=" subtitle is-5">
-<%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @current_recipe), :Method => :post%>
+<%= link_to "Edit This Recipe!", edit_recipe_path(:recipe_id => @recipe.id), :Method => :post%>
 <%= link_to "Return To Dashboard", child_path %>
  <%= link_to 'Destroy', @recipe, method: :delete %>
 </div>
