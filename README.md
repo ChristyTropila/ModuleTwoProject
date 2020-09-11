@@ -8,14 +8,13 @@
 4) Styling the app with HTML and CSS/Bootstrap
 
 # User Stories
-
--Child can login or create new registration
--Child can create a new recipe or reopen existing recipes
--Child chooses from a list of foods
--Child chooses from a list of tools
--Child chooses from list of instructions
--Child rendered back to a cute index page of recipe cards
--Child can update, view, and delete recipes that they have created
+* Child can login or create new registration
+* Child can create a new recipe or reopen existing recipes
+* Child chooses from a list of foods
+* Child chooses from a list of tools
+* Child chooses from list of instructions
+* Child rendered back to a cute index page of recipe cards
+* Child can update, view, and delete recipes that they have created
 
 
 # How To Play
@@ -32,11 +31,11 @@
 
 # Stack and Gems Used
 
--Visual Studio Code
--PostgresSQL
--ActiveRecord
--Carrierwave (image uploader)
--Bcrypt (password hashing)
--Bootstrap (frontend design)
+* Visual Studio Code
+* PostgresSQL
+* ActiveRecord
+* Carrierwave (image uploader)
+* Bcrypt (password hashing)
+* Bootstrap (frontend design)
 
 
