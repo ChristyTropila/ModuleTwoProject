@@ -40,10 +40,7 @@ class FoodItemsController < ApplicationController
         redirect_to edit_kitchen_tool_path
     end
 
-    def destroy
-
-    end
-
+  
     private
 
     def food_params

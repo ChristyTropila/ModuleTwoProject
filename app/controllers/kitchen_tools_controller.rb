@@ -41,8 +41,7 @@ class KitchenToolsController < ApplicationController
 
     end
 
-    def destroy
-    end
+
 
     private
 
