@@ -7,7 +7,10 @@ class Recipe < ApplicationRecord
   #validations
   validates :title, presence: {message: "Please Name Your Recipe!"}
 
- 
+ #gem to upload pics
+ mount_uploader :image, ImageUploader
+
+
   #method to keep track of points earned by each player
    def update_points(recipe)
     recipe.rewarded_points += 50
@@ -15,10 +18,10 @@ class Recipe < ApplicationRecord
 
    #method takes in a food_item id and gives the name of that item
    def find_name_of_food(food_id)
-    # byebug
    get_name=FoodItem.all.find(food_id)
-   return "#{get_name.name} || Quantity:  #{get_name.quantity}" 
-    # byebug
+
+   return "#{get_name.quantity} buckets of #{get_name.name.parameterize.titleize}"
+
    end
 
  
@@ -30,18 +33,6 @@ class Recipe < ApplicationRecord
   #  byebug
   end
 
-
-
-  #method takes in a kitchen_tool_id and gives the description of that tool
-  def find_descrip_of_tool(tool_id)
-    tool=self.instructions.find do |f|
-      f.kitchen_tool_id == tool_id
-    end
-   
-    get_descrip=KitchenTool.all.find(tool.kitchen_tool_id)
-    # byebug
-    return get_descrip.description
-    #  byebug
-  end
+ 
  
 end

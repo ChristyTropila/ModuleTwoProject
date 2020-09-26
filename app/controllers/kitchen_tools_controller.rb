@@ -10,10 +10,9 @@ class KitchenToolsController < ApplicationController
     end
 
     def new
-     
         @tool=KitchenTool.new
         @tool_cond=KitchenTool.all.select{|tool| tool.name!=nil}
-        # @tool_var=@tool_cond.map{|tool| [tool.name, tool.description]}
+
         @errors=flash[:errors]
     end
 
@@ -30,6 +29,7 @@ class KitchenToolsController < ApplicationController
     end
 
     def edit
+        params
         @current_tool=KitchenTool.find_by(id: session[:kitchen_tool_id])
         @tool_var=KitchenTool.all.distinct
     end
@@ -41,8 +41,7 @@ class KitchenToolsController < ApplicationController
 
     end
 
-    def destroy
-    end
+
 
     private
 

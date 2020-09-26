@@ -1,16 +1,43 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
-    <title>ModleTwoProject</title>
+    <title>Quarantine Cuisine</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <h1>Helllloo Testing application erb</h1>
+    <div class="container">
+      <div class="navbar sticky-top ">
+        <%=image_tag('CUISINE.png') %>
+        <%# # <h1 class="display-1 mt-1 text-uppercase">Quarantine Cuisines.</h1> %>
+        </div>
+        <div class="nav">
+              <% if check_and_see_if_someone_is_logged_in?%>
+            LOGGED IN: <%=@current_child.name.capitalize%>
+            <div class="nav-item">
+              <%=button_to "LOG OUT", logout_path, method: :delete%> 
+          <%else%>
+          <li class="nav-item"><%=link_to "NEW USER? CLICK HERE!", new_children_path%></li>
+          <%end%>
+          </div> 
+          </div>
+        
+    </div>
+    <div class="main-content">
     <%= yield %>
+    </div>
+    <%# <footer class= "footer">
+      <div class="container justify-content-center">
+        <p class="lead"> Module Two Project By Christy Tropila 2020 </p>
+      </div> %>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>

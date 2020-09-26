@@ -1,4 +1,6 @@
-<h3>Edit Your Tool Choice </h3>
+
+<div class="login-form">
+<h2>Edit Your Tool Choice </h2>
 <hr>
 
 <% if @errors %>
@@ -6,10 +8,10 @@
    <p style= "color: red"> <%=error%> </p>
     <%end%>
 <%end%>
-
-<%=form_for  @current_tool do |f|%>
-
- <%= f.select :name, options_for_select(KitchenTool.all.map {|p| [ p.name ]}.uniq,   "Select Tools"),  :required => true %>
-
-<%=f.submit 'Add Tool!'%>
+<%=form_for @current_tool do |f|%>
+  <div class="form-group">
+ <%= f.select :name, options_for_select(KitchenTool.all.map {|p| [ p.name ]}.uniq,   "Select Tools"),  :prompt => "Select Tool",:required => true %>
+ </div>
+    <button type="submit" class="btn btn-primary">Add Tool!</button>
 <%end%>
+</div>

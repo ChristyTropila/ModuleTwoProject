@@ -1,17 +1,23 @@
-<h2> Let's Get Started! </h2>
-
-<% if @errors %>
+<div class="login-form">
+  <h2>Let's Get Started! <br>
+    Upload A Picture<br>
+    (Have Fun With This!)<br>
+    And Name Your Recipe! </h2>
+  <% if @errors %>
     <% @errors.each do |error|%>
-   <p style= "color: red"> <%=error%> </p>
+      <p style= "color: red"> <%=error%> </p>
     <%end%>
-<%end%>
-
-
-<%=form_for  @recipe do |f|%>
-<%=f.hidden_field :child_id, :value => session[:child_id]%>
-
-<%=f.text_field :title%>
-<%=f.submit 'Name Your Recipe!'%>
-<%end%>
-
-
+  <%end%>
+  <%=form_for  @recipe do |f|%>
+    <%=f.hidden_field :child_id, :value => session[:child_id]%>
+    <div class="form-group">
+      <%=f.label :image%>
+      <%=f.file_field :image%>
+    </div>
+    <div class="form-group">
+      <%=f.label :title%>
+      <%=f.text_field :title%>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Recipe!</button>
+  <%end%>
+</div>

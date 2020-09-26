@@ -12,6 +12,8 @@ class RecipesController < ApplicationController
 
     def new
       @recipe=Recipe.new
+      @current_child=Child.find_by(id: session[:child_id])
+
       @errors=flash[:errors]
     end
 
@@ -48,7 +50,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_params
-        params.require(:recipe).permit(:id, :title, :child_id)
+        params.require(:recipe).permit(:id, :title, :image, :child_id)
     end
 
 

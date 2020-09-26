@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-
+   skip_before_action :authorized_to_see_page, only: [:welcome,:login, :handle_login, :new, :create]
 
     #login and logout methods
     def login
@@ -9,7 +9,7 @@ class ChildrenController < ApplicationController
     def handle_login
         @child=Child.find_by(name: params[:name])
         if @child && @child.authenticate(params[:password])
-            cookies[:child_id]=@child.id
+            session[:child_id]=@child.id
           redirect_to child_path(@child)
         else
           flash[:error] = "Incorrect name, username, or password"
@@ -18,11 +18,16 @@ class ChildrenController < ApplicationController
     end
 
     def logout
-        @current_child=Child.find_by(id: session[:child_id])
-        @current_child=nil
+
+        session[:child_id]=nil
         redirect_to login_path
+
     end
 
+
+    #welcome page
+    def welcome
+    end
 
     #crud methods
     def index
@@ -51,14 +56,7 @@ class ChildrenController < ApplicationController
     
 end
 
-    def edit
-    end
-
-    def update
-    end
-
-    def destroy
-    end
+    
 
     private
     

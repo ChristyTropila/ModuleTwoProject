@@ -29,18 +29,17 @@ end
 
 
 def edit
-    @current_instruction=Instruction.find_by(id: session[:instruction_id])
+   @current_instruction=Instruction.find_by(id: session[:instruction_id])
 end
 
 def update
     @current_instruction=Instruction.find_by(id: session[:instruction_id])
     @current_instruction.update(instruction_params)
-    redirect_to recipe_path(@current_instruction)
+    redirect_to instruction_path(@current_instruction)
 
 end
 
-def destroy
-end
+
 
 private
 
